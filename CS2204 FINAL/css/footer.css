@@ -1,0 +1,25 @@
+footer {
+  font-weight: 300;
+  padding: 2rem;
+  background: var(--main-black);
+  border-top: 4px solid var(--main-red);
+  color: aliceblue;
+  text-align: center;
+}
+footer > h4 {
+  color: aliceblue;
+}
+
+footer > h4,
+footer > a {
+  text-align: center;
+  margin: 4px;
+}
+
+footer > a:hover{
+  color: aqua;
+}
+
+footer i {
+  vertical-align: middle;
+}

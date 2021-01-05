@@ -1,0 +1,56 @@
+:root {
+  --main-white: #f0f0f0;
+  --main-red: #be3144;
+  --main-blue: #45567d;
+  --main-black: #000000;
+}
+.heading,
+#heading_ti {
+  font-size: 4rem;
+  color: palevioletred;
+  text-align: left;
+  margin-top: 20px;
+}
+
+#heading_ti {
+  text-align: center;
+}
+
+#trend {
+  text-align: center;
+  margin-top: 20px;
+}
+.head-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: logo;
+  animation-duration: 3s;
+  z-index: 5;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+@keyframes logo {
+  50% {
+    margin-right: 455pt;
+    z-index: 5;
+    transform: rotateX(60deg);
+    transform: rotateY(60deg);
+    transform: rotateZ(60deg);
+  }
+  75% {
+    margin-right: 655pt;
+    z-index: 5;
+    transform: rotateX(120deg);
+    transform: rotateY(120deg);
+    transform: rotateZ(0deg);
+  }
+  100% {
+    margin-right: 855pt;
+    z-index: 5;
+    transform: rotateX(180deg);
+    transform: rotateY(180deg);
+    transform: rotateZ(60deg);
+  }
+}

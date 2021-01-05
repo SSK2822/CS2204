@@ -1,0 +1,79 @@
+/* Global Styles */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 10px;
+    background: var(--main-blue);
+    background-image: url(../images/background.jpg);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  }
+  
+  .nav-list {
+    display: flex;
+    margin-right: 2rem;
+  }
+  .nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+  }
+  
+  .nav-list a:hover {
+    background: var(--main-blue);
+  }
+  .isDisabled {
+    color: currentColor;
+    opacity: 0.5;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+
+
+
+/* Footer Styles */
+
+footer {
+    /* border-top: 2px solid white; */
+    margin-top: auto;
+    text-align: center;
+    font-size: 1em;
+    padding: 1em;
+    background: var(--theme-back-dark-color);
+    color: #FFFFFF;
+}
+
+footer a {
+    color: var(--theme-main-color);
+    text-decoration: none;
+    cursor: default;
+}
+
+footer a:hover {
+    font-weight: 600;
+}
+
+
+/* Custom Element Classes */

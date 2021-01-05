@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Movie ticket booking</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Book tickets, Movie">
+        <meta name="keywords" content="Ticket-booking, Cinema, Movie shows,
+            Now-Showing">
+        <meta name="author" content="PALAZZO Cinema">
+
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/heading.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+        <!--<link rel="stylesheet" href="style.css">-->
+
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+            crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Raleway:700&amp;display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster"
+            rel="stylesheet" type="text/css">
+        <style>
+            .row > span{
+                font-weight: bolder;
+                font-size: larger;
+            }
+                   
+        </style>
+        <script rel="javascript" type="text/javascript" src="../script/movies.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <!--HEADER STARTS-->
+            <header>
+
+                <h1>PALAZZO <span><img src="../images/filmreel.png" alt="title 
+                    picture (logo)" class="head-img"></span> CINEMA</h1>
+                    
+            </header>
+            <!--HEADER ENDS-->
+
+            <!--NAV STARTS-->
+            <nav id="navbar" class="nav">
+                <ul class="nav-list">
+                    <li>
+                        <a href="homepage.html" class="isDisabled">HOME</a>
+                    </li>
+                    <li>
+                        <a href="nowshowing.html">NOW SHOWING</a>
+                    </li>
+                    <li>
+                        <a href="ticket.html">TICKET</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--NAV ENDS-->
+
+            <section id="trending" class="homepage_nowshowing">
+                <div>
+                    <p id="heading_ti">TRENDING NOW </p>
+                    
+                    <div id="insvid">
+                    </div>
+                </div>
+            </section>
+
+            <div class="row">
+                <section class="homepage_movie">
+
+                    <div class="column" >
+                        <dl>
+
+                            <dt>
+                                <p class="heading">NOW SHOWING MOVIES</p>
+                            </dt>
+                            <!--Movie 1-->
+                            <p class="desc" id="remo">Kindly wait the page is being loaded.</p>
+                            <div id="nowshowing">
+                                
+                            </div>
+
+                        </dl>
+
+                    </div>
+                </section>
+
+                <!--UPCOMING SECTION-->
+
+                <section  class="homepage_movie">
+                    <div class="column">
+                        <dl>
+                            <dt>
+                                <p class="heading">UPCOMING MOVIES</p>
+                            </dt>
+                            <!--Movie 1-->
+                            <div id="upcoming">
+                                
+                            </div>
+                            
+                        </dl>
+                    </div>
+                </section>
+            </div>
+
+            <script type="text/javascript">
+
+                // Inputing values
+                
+                window.onload=init();
+                 function init(){
+                 var i=0;
+                 var j=0;
+                 var database=getMovies();
+                 var l= database.length;
+                 console.log(l)
+                 console.log(database[0].name)
+                
+                 for(i;i<l;i++){
+                    var mn = database[i].name;
+                    var tbn = database[i].thumbnail;
+                    var ca = database[i].cast;
+                    var di = database[i].director;
+                    var du = database[i].duration;
+                    var idd = database[i].id;
+                    console.log(mn,tbn,ca,di,du,idd) 
+
+                    var sr = database[i].src;
+                    var vid = document.createElement("video");
+                    vid.controls="controls";
+                    vid.autoplay="autoplay";
+                    vid.muted="muted";  
+                                    
+                    vid.innerHTML = "<source src="+sr.replace(".mp4",".ogg")+" type=\"video/ogg\"> <source src="+sr+" type=\"video/mp4\"> <h2>Your Browser does not support this Video format</h2>" ;     
+                    
+                    document.getElementById("insvid").appendChild(vid); 
+                    
+                    console.log(sr.replace(".mp4",".ogg")+" is the src in .ogg");
+                    
+                    console.log(vid);
+                    
+                    if (database[i].type== "now"){
+                        var para = document.createElement("dd");                 
+                        para.innerHTML = "<h3><span>Movie:</span> "+mn+"</h3><img src="+tbn+" alt="+mn+" class=\"thumbnail\" onclick=\"clickedimg("+idd+")\"> <p class=\"desc\"><span>Cast:</span> "+ca+" <br><span>Director:</span> "+di+" <br><span>Duration:</span> " +du+ "</p><br>" ;     
+                        document.getElementById("nowshowing").appendChild(para); 
+                        document.getElementById("remo").style.display="none"; 
+
+                    } else { 
+                        var para = document.createElement("dd");                 
+                        para.innerHTML = "<h3><span>Movie:</span> "+mn+"</h3><img src="+tbn+" alt="+mn+" class=\"thumbnail\" onclick=\"clickedimg("+idd+")\"> <p class=\"desc\"><span>Cast:</span> "+ca+" <br><span>Director:</span> "+di+" <br><span>Duration:</span> " +du+ "</p><br>" ;     
+                        document.getElementById("upcoming").appendChild(para); }
+                 }
+                
+                 }
+                
+                    
+                </script>
+            <!--FOOTER STARTS-->
+            <footer>
+                <h4>@Copyright of resources belong to copyright owners- fair use
+                    for
+                    education purpose</h4>
+                <a href="homepage.html" class="isDisabled">Home Page</a>
+                <a href="design.html" target="_blank">Design</a>
+            </footer>
+            <!--FOOTER ENDS-->
+        </div>
+
+
+<script>
+
+// Changing video
+var index_video=0;
+
+function clickedimg(id){
+    index_video = 0+id-1;
+    return slideshow_video();
+}
+
+ slideshow_video();
+
+ function slideshow_video(){
+ var slides=document.querySelectorAll("video");
+ var i;
+ for(i=0; i<slides.length; i++){
+   slides[i].style.display="none";
+
+ }
+ index_video++;
+ if(index_video>slides.length)
+    index_video=1;
+ slides[index_video-1].style.display="block";
+ slides[index_video-1].load();
+ slides[index_video-1].onended=function()
+ {setTimeout(slideshow_video,2000);}
+ }
+
+
+</script>
+        
+    </body>
+</html>

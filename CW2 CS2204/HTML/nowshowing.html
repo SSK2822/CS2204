@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Book tickets, Movie">
+        <meta name="keywords" content="Ticket-booking, Cinema, Movie shows,
+            Now-Showing">
+        <meta name="author" content="Palazzo Cinema">
+
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/heading.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+            crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Raleway:700&amp;display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster"
+            rel="stylesheet" type="text/css">
+
+        <style>
+
+            .thumbnail{
+            float: left;
+            margin-right: 10pt;
+            margin-bottom: 3px;
+            margin-top: 3px;
+            }
+
+            select , input{
+            margin-right: 8pt;
+            margin-bottom: auto;
+            margin-top: 15px;
+            background-color: transparent;
+            color: aliceblue;
+            font-size: 1.8rem;
+            }
+
+            select{
+                font-size: 1.3rem;
+            }
+            
+            .column {
+            float: left;
+            width: 60%;
+            }
+
+            .row{
+            border: 4px solid rgb(106, 11, 184);
+            border-radius: 20px;
+            margin: 10px;
+            }
+
+            .row:after {
+            content: "";
+            clear: both;
+            display: table;
+            }
+
+            .alignment{
+            margin-left: 61%;
+            }
+
+            .alignment > img{
+            display: block;            
+            width: 330px;
+            }
+
+            #left{
+                margin-left: 15px;
+            }
+
+        </style>
+        <title>NOW SHOWING PAGE</title>
+    </head>
+    <body>
+        <!--HEADER STARTS-->
+        <header>
+            <h1>PALAZZO <span><img src="../images/filmreel.png" alt="title
+                        picture (logo)" class="head-img"></span> CINEMA</h1>
+        </header>
+        <!--HEADER ENDS-->
+
+        <!--NAV STARTS-->
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="homepage.html">HOME</a>
+                </li>
+                <li>
+                    <a href="nowshowing.html" class="isDisabled">NOW SHOWING</a>
+                </li>
+                <li>
+                    <a href="ticket.html">TICKET</a>
+                </li>
+            </ul>
+        </nav>
+        <!--NAV ENDS-->
+
+
+        <div class="row">
+            <!--CINEMA SELECTION-->
+            <div class="column" id="left">
+                <form action="ticket.html" method="GET">
+                    <div id="cinema_selection">
+                        <p class="heading">SELECT MOVIE HALL DETAILS: </p>
+                        <select name="cinema" id="cinema">
+
+                            <option value="festivalwalk">PALAZZO- festival walk</option>
+                            <option value="IFC">PALAZZO- IFC</option>
+
+
+                            <option value="Pacific">PALAZZO- Pacific</option>
+                            <option value="Landmark">PALAZZO- Landmark</option>
+                        </select>
+                    </div>
+                </form>
+                <br>
+                <!--CINEMA SELECTION ENDS-->
+                <!--MOVIE 1-->
+                <form action="ticket.html" method="GET">
+                    <img src="../images/casablanca.png" alt="casablanca
+                        thumbnail"
+                        class="thumbnail">
+                    <div id="nowshowing_movie1">
+                        <label for="mname1">Movie name: </label><br>
+                        <input type="text" id="mname1" name="mname1"
+                            value="Casablanca"
+                            disabled>
+                        <select name="timing1" id="timing1">
+
+                            <option value="2020-09-14T9:00" data-house="1"
+                                data-day="monday">14 September, 09:00</option>
+                            <option value="2020-09-16T10:00" data-house="2"
+                                data-day="wednesday">16 September, 10:00</option>
+                            <option value="2020-09-18T13:00" data-house="1"
+                                data-day="friday">18 September, 13:00</option>
+                            <option value="2020-09-20T15:00" data-house="3"
+                                data-day="sunday">20 September, 15:00</option>
+                        </select>
+                        <input type="submit" value="Buy Tickets">
+                    </div>
+                </form>
+                <br><br>
+                <!--MOVIE 2-->
+                <form action="ticket.html" method="GET">
+                    <img src="../images/bigbuck.jpg" alt="big buck thumbnail"
+                        class="thumbnail">
+                    <div id="nowshowing_movie2">
+                        <label for="mname2">Movie name: </label><br>
+                        <input type="text" id="mname2" name="mname2" 
+                        value="Big Buck"
+                            disabled>
+                        <select name="timing2" id="timing2">
+
+                            <option value="2020-09-15T9:00" data-house="1"
+                                data-day="tuesday">15 September, 09:00</option>
+                            <option value="2020-09-16T10:00" data-house="4"
+                                data-day="wednesday">16 September, 10:00</option>
+                            <option value="2020-09-17T14:00" data-house="3"
+                                data-day="thursday">17 September, 14:00</option>
+                            <option value="2020-09-19T15:00" data-house="2"
+                                data-day="saturday">19 September, 15:00</option>
+                        </select>
+                        <input type="submit" value="Buy Tickets">
+                    </div>
+                </form>
+                <br><br>
+                <!--MOVIE 3-->
+                <form action="ticket.html" method="GET">
+                    <img src="../images/barbecue.jpg" alt="barbecue thumbnail"
+                        class="thumbnail">
+                    <div id="nowshowing_movie3">
+                        <label for="mname3">Movie name: </label><br>
+                        <input type="text" id="mname3" name="mname3"
+                            value="Barbecue"
+                            disabled>
+                        <select name="timing3" id="timing3">
+
+                            <option value="2020-09-13T9:00" data-house="1"
+                                data-day="sunday">13 September, 09:00</option>
+                            <option value="2020-09-16T10:00" data-house="3"
+                                data-day="wednesday">16 September, 10:00</option>
+                            <option value="2020-09-18T15:00" data-house="2"
+                                data-day="friday">18 September, 15:00</option>
+                            <option value="2020-09-19T15:00" data-house="3"
+                                data-day="saturday">19 September, 15:00</option>
+                        </select>
+                        <input type="submit" value="Buy Tickets">
+                    </div>
+                </form>
+                <br><br>
+            </div>
+             <!--CINEMA LOCATION STARTS-->
+            <div id="column">
+                <p class="heading">CINEMA LOCATIONS:</p>
+                <div id="cineloc"><br>
+                    <h3>PALAZZO- festival walk:</h3>
+                    <address>ADDRESS: PALAZZO, 3rd floor, 80 Tat Chee Ave,
+                        Festival Walk, hong kong</address><br>
+                    <img src="../images/festivalwalk.png" alt="Festival walk map
+                        img"><br>
+                    <h3>PALAZZO- IFC</h3>
+                    <address>ADDRESS: PALAZZO, 2nd floor, 8 Finance St,
+                        Central, hong kong</address><br>
+                    <div class="alignment">
+                        <img src="../images/IFC.png" alt="IFC map img"><br>
+                    
+                        <h3>PALAZZO- Pacific</h3>
+                        <address>ADDRESS: PALAZZO, 2nd floor, 88 Queensway,
+                            Admiralty, hong kong</address><br>
+                        <img src="../images/Pacific.png" alt="Pacific map img"><br>
+
+                        <h3>PALAZZO- Landmark</h3>
+                        <address>ADDRESS: PALAZZO, 3rd floor, 15 Queen's Road
+                            Central, Central, hong kong</address><br>
+                        <img src="../images/landmark.png" alt="Landmark map img">
+                    </div>
+                </div>
+            </div>
+            <!--CINEMA LOCATION ENDS-->
+            <br><br>
+        </div>
+        
+        <!--FOOTER STARTS-->
+        <footer>
+            <h4>@Copyright of resources belong to copyright owners- fair use for
+                education purpose</h4>
+            <a href="homepage.html">Home Page</a>
+            <a href="design.html" target="_blank">Design</a>
+        </footer>
+        <!--FOOTER ENDS-->
+
+    </body>
+</html>

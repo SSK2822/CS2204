@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Palazzo Cinema">
+        <meta name="keywords" content="Ticket-booking, Cinema, Movie shows,
+            Now-Showing">
+        <meta name="description" content="Book tickets, Movie">
+        <title>Ticket Page</title>
+    </head>
+    <body>
+        <!--HEADER STARTS-->
+        <header>
+            <img
+                src="../images/filmreel.png"
+                alt="title picture (logo)">
+            <h1>PLAZZO CINEMA</h1>
+
+            <!--NAV STARTS-->
+            <nav id="navbar" class="nav">
+                <ul class="nav-list">
+                    <li>
+                        <a href="homepage.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="nowshowing.html">NOW SHOWING</a>
+                    </li>
+                    <li>
+                        <a href="ticket.html">TICKET</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--NAV ENDS-->
+
+        </header>
+        <!--HEADER ENDS-->
+        <hr>
+
+        <!-- <form action="print.html" method="POST">-->
+
+        <!--DISPLAY DETAILS-->
+        <div id="display_details">
+            <h4 id="cinema_ticket">CINEMA- FESTIVAL WALK</h4>
+            <h4 id="movie_ticket">MOVIE- BIG BUCK</h4>
+            <h4 id="day_ticket">DAY- TUESDAY</h4>
+            <h4 id="date&time_ticket">DATE- 15th September <br>TIME- 9:00
+                (24hrs)
+            </h4>
+            <h4 id="house_ticket">HOUSE- 1</h4>
+        </div>
+        <!--DISPLAY DEATILS END-->
+        <hr>
+        <!--screen booking-->
+        <div id="screen_booking">
+            <table>
+
+                <caption>SCREEN HERE</caption>
+                <thead>
+                    <tr>
+                        <th>ROWS</th>
+                        <th colspan="4">COLOUMN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>A</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr><td>B</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr><td>C</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr><td colspan="5">SELECT YOUR SEAT(s)</td></tr>
+                </tfoot>
+
+            </table>
+        </div>
+        <!--screen booking ends-->
+
+        <!--  </form>-->
+
+        <!--CONFIRMING SCREEN-->
+        <div id="Booking-Counter">
+            <h4>SEAT BOOKED</h4>
+            <form action= 'print.html' method= 'get'>
+                <label for="seat_booked">Seat-Booked</label>
+                <input type="text" id="seat_booked" value="A1,B3">
+                <button type="submit">Confirm</button>
+            </form>
+        </div>
+
+
+        <hr>
+
+
+        <!--FOOTER STARTS-->
+        <footer>
+            <h4>@Copyright of resources belong to copyright owners- fair use for
+                education purpose</h4>
+            <a href="homepage.html">Home Page</a>
+            <a href="design.html" target="_blank">Design</a>
+        </footer>
+        <!--FOOTER ENDS-->
+
+    </body>
+</html>

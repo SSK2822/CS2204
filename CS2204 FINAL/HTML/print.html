@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Palazzo Cinema">
+        <meta name="keywords" content="Ticket-booking, Cinema, Movie shows,
+            Now-Showing">
+        <meta name="description" content="Book tickets, Movie">
+
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/heading.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+            crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Raleway:700&amp;display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster"
+            rel="stylesheet" type="text/css">
+
+        <style>
+            .booked-ticket 
+            {
+                display: block;
+                margin: 24px 0;
+            }
+            
+            .ticket-form 
+            {
+                font-size: 1.2em;
+                display: block;
+                padding-bottom: 24px;
+                border-bottom: 2px solid grey;
+                /* margin-right: 10%; */
+                padding-left: 10%;
+                float: left;
+            }
+            
+            .booked-ticket:last-of-type .ticket-form 
+            {
+                border-bottom: none;
+            }
+            input{
+            background-color: transparent;
+            color:burlywood;
+            font-size: 1.1em;
+            padding: 8px 8px;
+            margin-bottom: 8px;
+            width: 412px;
+            }
+            label{
+                color:rgb(69, 209, 209);
+                font-weight: 500;
+                min-width: 150px;
+                display: inline-block;
+            }
+            h3{
+                padding-top: 5%;
+                padding-left: 15%;
+                color: blanchedalmond;
+            }
+            @media print {
+                header {
+                    display: none;
+                }
+                footer {
+                    display: none;
+                }
+                h2 {
+                    display: none;
+                }
+                .noprint{
+                display: none;
+                }
+                .nav{
+                    margin-top: 0pt;
+                    display: none;
+                }
+                
+                .row{
+                    margin-top: 0pt;
+                    border: 0px;
+                }
+                .column{
+                    float: none;
+                    break-after: page;
+                    margin-left: 25%;
+                    padding-top: 25%;
+                    margin-right: 25%;
+                }
+                .column:last-child{
+                    break-after: avoid-page;
+                    /* padding-top: 0%; */
+                }
+                
+            }
+                    
+        </style>
+        <title>PRINT PAGE</title>
+    </head>
+    <body>
+        <!--HEADER STARTS-->
+        <header class="noprint">
+            <h1>PALAZZO <span><img src="../images/filmreel.png" alt="title
+                        picture (logo)" class="head-img"></span> CINEMA</h1>
+        </header>
+        <!--HEADER ENDS-->
+
+        <!--NAV STARTS-->
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="homepage.html">HOME</a>
+                </li>
+                <li>
+                    <a href="nowshowing.html">NOW SHOWING</a>
+                </li>
+                <li>
+                    <a href="ticket.html">TICKET</a>
+                </li>
+            </ul>
+        </nav>
+        <!--NAV ENDS-->
+
+        <div class="row">        
+            
+        </div>
+
+        <script>
+            window.onload = init();
+    
+            function init() {
+                const name = localStorage.getItem("movieName");
+                const date = localStorage.getItem("date");
+                const cinema = localStorage.getItem("Cinema");
+                const c = localStorage.getItem("a");
+                let a = c.split(",");
+                const house = localStorage.getItem("house");
+                const loc = document.querySelector(".booked-ticket");
+                console.log(name, date, cinema, house, a[1]);
+
+                for (let z = 0; z <(a.length);z++)
+                {
+                    var frm = document.createElement("form");
+                    frm.setAttribute("class","ticket-form");             
+                    frm.innerHTML = "<div><h3>TICKET "+(z+1)+"</h3><label>Cinema:</label><input value=\""+cinema+"\" readonly><br><label>Movie:</label><input value=\""+name+"\" readonly><br><label>Date Time:</label><input value="+date+" readonly><br><label>House No:</label><input value="+house+" readonly><br><label>Seat:</label><input value="+a[z]+" readonly></div>";     
+                    
+                    var dd = document.createElement("div");
+                    dd.setAttribute("class","column");
+                    dd.append(frm);
+
+                    document.getElementsByClassName("row")[0].appendChild(dd); 
+                }
+
+            }
+           localStorage.clear();
+        </script>
+
+        <!--FOOTER STARTS-->
+        <footer class="noprint">
+            <h4>@Copyright of resources belong to copyright owners- fair use for
+                education purpose</h4>
+            <a href="homepage.html">Home Page</a>
+            <a href="design.html" target="_blank">Design</a>
+        </footer>
+        <!--FOOTER ENDS-->
+    </body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Book tickets, Movie">
+        <meta name="keywords" content="Ticket-booking, Cinema, Movie shows,
+            Now-Showing">
+        <meta name="author" content="Palazzo Cinema">
+
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/heading.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/footer.css">
+
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+            crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Raleway:700&amp;display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster"
+            rel="stylesheet" type="text/css">
+
+        <style>
+
+            .thumbnail{
+            float: left;
+            margin-right: 10pt;
+            margin-bottom: 3px;
+            margin-top: 3px;
+            }
+
+            select , input{
+            margin-right: 8pt;
+            margin-bottom: auto;
+            margin-top: 15px;
+            background-color: transparent;
+            color: aliceblue;
+            font-size: 1.8rem;
+            }
+
+            select{
+                font-size: 1.3rem;
+            }
+            
+            .column {
+            float: left;
+            width: 60%;
+            }
+
+            .row{
+            border: 4px solid rgb(106, 11, 184);
+            border-radius: 20px;
+            margin: 10px;
+            }
+
+            .row:after {
+            content: "";
+            clear: both;
+            display: table;
+            }
+
+            .alignment{
+            margin-left: 61%;
+            }
+
+            .alignment > img{
+            display: block;            
+            width: 330px;
+            }
+
+            #left{
+                margin-left: 15px;
+            }
+
+        </style>
+        <script rel="javascript" type="text/javascript"
+            src="http://courses.cs.cityu.edu.hk/cs2204/cw3/cinemas.js"></script>
+        <script rel="javascript" type="text/javascript"
+            src="../script/movies.js"></script>
+        <title>NOW SHOWING PAGE</title>
+        
+    </head>
+    <body>
+        
+        <!--HEADER STARTS-->
+        <header>
+            <h1>PALAZZO <span><img src="../images/filmreel.png" alt="title
+                        picture (logo)" class="head-img"></span> CINEMA</h1>
+        </header>
+        <!--HEADER ENDS-->
+
+        <!--NAV STARTS-->
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="homepage.html">HOME</a>
+                </li>
+                <li>
+                    <a href="nowshowing.html" class="isDisabled">NOW SHOWING</a>
+                </li>
+                <li>
+                    <a href="ticket.html">TICKET</a>
+                </li>
+            </ul>
+        </nav>
+        <!--NAV ENDS-->
+
+
+        <div class="row">
+            <!--CINEMA SELECTION-->
+            <div class="column" id="left">
+                <form action="ticket.html" method="GET">
+                    <div id="cinema_selection">
+                        <p class="heading">SELECT CINEMA HALL DETAILS: </p>
+                        <select name="cinema" id="cinema">
+                            <option value="" selected="selected">Select Cinema
+                                Hall</option>
+                        </select>
+
+                    </div>
+                </form>
+                    <br>
+                    <!--CINEMA SELECTION ENDS-->
+                    <!--MOVIE STARTS-->
+                <!-- <form action="ticket.html" method="GET"> -->
+                    <div id="imgg"></div>
+                    <!--MOVIE ENDS -->
+                </form>
+                <br><br>
+
+            </div>
+            <!--CINEMA LOCATION STARTS-->
+            <div id="column">
+                <p class="heading">CINEMA LOCATIONS:</p>
+                <div id="cineloc"><br>
+                    <h3>PALAZZO- festival walk:</h3>
+                    <address>ADDRESS: PALAZZO, 3rd floor, 80 Tat Chee Ave,
+                        Festival Walk, hong kong</address><br>
+                    <div class="alignment">
+                        <img src="../images/festivalwalk.png" alt="Festival walk map
+                        img"><br>
+                        <h3>PALAZZO- IFC</h3>
+                        <address>ADDRESS: PALAZZO, 2nd floor, 8 Finance St,
+                            Central, hong kong</address><br>
+                    
+                        <img src="../images/IFC.png" alt="IFC map img"><br>
+
+                        <h3>PALAZZO- Pacific</h3>
+                        <address>ADDRESS: PALAZZO, 2nd floor, 88 Queensway,
+                            Admiralty, hong kong</address><br>
+                        <img src="../images/Pacific.png" alt="Pacific map img"><br>
+                        <h3>PALAZZO- Landmark</h3>
+                        <address>ADDRESS: PALAZZO, 3rd floor, 15 Queen's Road
+                            Central, Central, hong kong</address><br>
+                        <img src="../images/landmark.png" alt="Landmark map
+                            img">
+                    </div>
+                </div>
+            </div>
+            <!--CINEMA LOCATION ENDS-->
+            <br><br>
+        </div>
+
+        <!--FOOTER STARTS-->
+        <footer>
+            <h4>@Copyright of resources belong to copyright owners- fair use for
+                education purpose</h4>
+            <a href="homepage.html">Home Page</a>
+            <a href="design.html" target="_blank">Design</a>
+        </footer>
+        <!--FOOTER ENDS-->
+
+
+        <script script type="text/javascript">
+        window.onload = init();
+        function indi(val) {
+            var database = getCinemas();
+            var l =database.length;
+            var database1 = getMovies();
+            var l1 = database1.length;
+
+            var i = 0;
+            var cin = document.getElementById("cinema");
+            var o = 0;
+            for (i;i<l;i++)
+            {
+                var cn = database[i].branchName;
+                console.log(cn);
+                var l2 = database.length;
+                console.log(l2);
+                var j =0;
+
+                var cn1 = window.localStorage.getItem("Cinema");
+                console.log(cn1);
+                console.log(database[i].movies.length);
+
+                var o = 0;
+                var l3 = database[i].movies[j].shows.length;
+                
+                if (cn == cn1)
+                {
+                    return i;
+                }
+                
+
+                
+            }
+
+            
+        }
+        function nt()
+            {
+                console.log("button works");
+               
+                var Cinema = document.getElementById("cinema").value;
+                localStorage.setItem("Cinema", Cinema);
+                localStorage.setItem("i", indi(Cinema));
+                    
+                window.localStorage.setItem("test","hahaha");
+                console.log(window.localStorage.getItem("i"));
+                console.log(Cinema);
+            };
+        function init(){
+            var database = getCinemas();
+            var l =database.length;
+            var database1 = getMovies();
+            var l1 = database1.length;
+
+            // console.log(database[0].branchName);// TESTING
+            // console.log(database1[3].id);
+
+            var i = 0;
+            var cin = document.getElementById("cinema");
+            var o = 0;
+            for (i;i<l;i++){
+                var cn = database[i].branchName;
+                // console.log(cn);
+                cin.options[cin.options.length] = new Option(cn, cn);
+
+                // console.log(database[i].movies.length);
+                var l2 = database[i].movies.length;
+                var j =0;
+
+                for(var x = 0,j; x<l2; x++,j++)
+                {
+                    for(var y = 0; y<l1; y++)
+                    {
+                        if(database[i].movies[x].id == database1[y].id)
+                        {
+                            var im = database1[y].thumbnail;
+                            var mn  = database1[y].name;
+                            var idd = database1[y].id;
+                            // console.log(idd,mn); 
+                            var para = document.createElement("div");
+                            para.setAttribute("class", "cell");                
+                            para.innerHTML = "<p class=\"cell"+j+"\"><img src="+im+" alt="+mn+" class=\"thumbnail\"><label for=\"mname1\">Movie name: </label><br><input type=\"text\" id=\""+idd+"\" name=\"name\"value=\" "+mn+"\"><select name=\"timing\" class=\"timing\"></select><input type=\"submit\" value=\"Buy Tickets\" onclick = \"nt()\"><br><br><br></p>" ;     
+                            let fff = document.createElement("form");
+                            fff.setAttribute("action", "ticket.html");
+                            fff.setAttribute("method", "GET");
+                            fff.setAttribute("class", "book-form");
+                            fff.append(para);
+                            
+                            document.getElementById("imgg").append(fff);                                
+                        }
+                    }
+
+                    // console.log(j);
+
+                    // console.log(database[i].movies[x].shows.length + " is the length");
+
+                    var l3 = database[i].movies[x].shows.length;
+                    var tim = document.getElementsByClassName("timing");
+                    
+                  
+
+                    for (var w = 0;w<l3;w++)
+                    {
+                        var timin = database[i].movies[x].shows[w].datetime;
+                        // console.log(timin+" is the timing");
+                        // console.log(tim[o]);
+                        tim[o].options[tim[o].options.length] = new Option(timin,timin);
+                    }
+                    o++;
+                    
+                }
+                document.getElementById("imgg").style.visibility="hidden";
+            }
+
+            document.getElementById("cinema").addEventListener('change',
+                  function() {
+                    
+                    var ddl = document.getElementById("cinema");
+                    var selectedValue = ddl.selectedIndex;
+
+                    // console.log(selectedValue);
+                    if (selectedValue == 0){
+                        
+                        alert("Please select a cinema hall!");
+                        document.getElementById("imgg").style.display="none";
+                    }
+
+                    
+
+                    else { for (var h = 1;h<=(l+1);h++){
+                        if(selectedValue == h){
+                            document.getElementById("imgg").style.display="block";
+                            // console.log(l+"checked in if loop "+h);
+                            alert("Welcome to "+ddl.options[ddl.selectedIndex].value+"! Hope you will enjoy your show!");
+                            var f = document.getElementsByClassName("cell");
+                            for(var t = 0; t<f.length;t++){f[t].style.display="none"};
+                            // console.log(f);
+                            if(h == 1){var f1 = h-1}
+                            else{var f1 = h;}
+                            do{
+                                // console.log(f1);
+                                f[f1].style.display="block";
+                                f[f1].style.visibility="visible";
+                                f1++;
+                                var chc = f[f1].getElementsByTagName("p");
+                                // console.log(chc);
+                                // console.log(chc[0].getAttribute("class"));
+                            }while (chc[0].getAttribute("class") != "cell0");
+                        } 
+                    }
+                    }
+                    
+                }
+            );       
+        }
+    
+            
+        
+        </script>
+    </body>
+</html>

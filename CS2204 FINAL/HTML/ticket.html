@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Palazzo Cinema">
+        <meta name="keywords" content="Ticket-booking, Cinema, Movie shows,
+            Now-Showing">
+        <meta name="description" content="Book tickets, Movie">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/heading.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+            crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Raleway:700&amp;display=swap"
+            rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Lobster"
+        rel="stylesheet" type="text/css">
+
+        <style>
+            td + td:hover{
+            background-color: #007cd3;
+            cursor: pointer;
+        }
+        td{
+            border: 2pt rgb(36, 152, 197);
+            border-style: solid;
+            margin: 0;
+            padding: 3pt;
+        }
+        
+        table{
+            border-collapse: collapse;
+            border-spacing: 0px;
+            margin-bottom: 10pt;
+        }
+        caption{
+            font-weight: bold;
+            font-size: 2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        caption, th, tfoot{
+            color:rgb(255, 5, 142);
+        }
+        
+        .row{
+            border: 4px solid rgb(245, 21, 21);
+        }
+        #display_details{
+            text-align: center;
+            margin-top: 10%;
+        }
+        #display_details > h4{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: bisque;
+            font-size: 2.5rem;
+        }
+        #screen_booking, #Booking-Counter{
+            padding-left: 25%;
+        }
+        input{
+            margin-top: 10px;
+            background-color: transparent;
+            color: aliceblue;
+            font-size: 1.8rem;
+            }
+        button{
+            margin-right: 20%;
+            margin-top: 10px;
+            background-color:blanchedalmond;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        </style>
+        <script rel="javascript" type="text/javascript"
+        src="http://courses.cs.cityu.edu.hk/cs2204/cw3/cinemas.js"></script>
+    <script rel="javascript" type="text/javascript"
+        src="../script/movies.js"></script>        
+        <title>Ticket Page</title>
+    </head>
+    <body>
+        <!--HEADER STARTS-->
+        <header>
+            <h1>PALAZZO <span><img src="../images/filmreel.png" alt="title
+                        picture (logo)" class="head-img"></span> CINEMA</h1>
+        </header>
+        <!--HEADER ENDS-->
+
+        <!--NAV STARTS-->
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="homepage.html">HOME</a>
+                </li>
+                <li>
+                    <a href="nowshowing.html">NOW SHOWING</a>
+                </li>
+                <li>
+                    <a href="ticket.html" class="isDisabled">TICKET</a>
+                </li>
+            </ul>
+        </nav>
+        <!--NAV ENDS-->
+
+        <!-- <form action="print.html" method="POST">-->
+        <div class="row">
+            <div class="column">
+                <!--DISPLAY DETAILS-->
+                <div id="display_details">
+                    <h4 class="info">CINEMA-</h4><h4 id="cinema_ticket"></h4>
+                    <h4 class="info">MOVIE-</h4><h4 id="movie_ticket"></h4>
+                    
+                    <h4 class="info">DATE-</h4><h4 id="date"></h4>
+                    <h4 class="info">HOUSE-</h4><h4 id="house_ticket"></h4>
+                </div> 
+            </div>
+            <!--DISPLAY DEATILS END-->
+
+            <div class="column">
+                <!--screen booking-->
+                <div id="screen_booking">
+                    <table>
+
+                        <caption>SCREEN HERE</caption>
+                        <thead>
+                            <tr>
+                                <th>ROWS</th>
+                                <th colspan="4">COLOUMN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Row A</b></td>
+                                <td id="A1" class="seat" onclick="tdclick(this)">1</td>
+                                <td id="A2" class="seat" onclick="tdclick(this)">2</td>
+                                <td id="A3" class="seat" onclick="tdclick(this)">3</td>
+                                <td id="A4" class="seat" onclick="tdclick(this)">4</td>
+                            </tr>
+                            <tr>
+                                <td><b>Row B</b></td>
+                                <td id="B1" class="seat" onclick="tdclick(this)">1</td>
+                                <td id="B2" class="seat" onclick="tdclick(this)">2</td>
+                                <td id="B3" class="seat" onclick="tdclick(this)">3</td>
+                                <td id="B4" class="seat" onclick="tdclick(this)">4</td>
+                            </tr>
+                            <tr>
+                                <td><b>Row C</b></td>
+                                <td id="C1" class="seat" onclick="tdclick(this)">1</td>
+                                <td id="C2" class="seat" onclick="tdclick(this)">2</td>
+                                <td id="C3" class="seat" onclick="tdclick(this)">3</td>
+                                <td id="C4" class="seat" onclick="tdclick(this)">4</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="5">SELECT YOUR SEAT(s)</td></tr>
+                        </tfoot>
+
+                    </table>
+                </div>
+                <!--screen booking ends-->
+
+                <!--  </form>-->
+
+                <!--CONFIRMING SCREEN-->
+                <div id="Booking-Counter">
+                    <!-- <h4>SEAT BOOKED:</h4> -->
+                    <form action='' method='get' id="screen-form">
+                        <label for="seat-booked">Seat Booked</label>
+                        <input id="seat-booked">
+                        <button>Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--FOOTER STARTS-->
+        <footer>
+            <h4>@Copyright of resources belong to copyright owners- fair use for
+                education purpose</h4>
+            <a href="homepage.html">Home Page</a>
+            <a href="design.html" target="_blank">Design</a>
+        </footer>
+        <!--FOOTER ENDS-->
+        <script>
+            window.onload = init();
+            var ind = localStorage.getItem("index");
+            console.log(ind+" is the index");
+            function tdclick(x)
+            {
+                console.log('td clicked'); 
+                x.style.backgroundColor = '#007cd3';
+                x.style.textDecoration = 'none';
+                x.style.pointerevents = 'none';
+                x.style.cursor = 'not-allowed'; 
+            }; 
+        
+            function init() {
+                const d = getCinemas();
+                const c = getMovies();
+                console.log(c);
+        
+        
+                window.addEventListener('load', dat);
+        
+                function dat() {
+                    const params = (new URL(document.location)).searchParams;
+                    const name = params.get("name");
+                    const date = params.get("timing");
+                    const cinema = localStorage.getItem("Cinema");
+                    const i = localStorage.getItem("i");
+        
+                    function h ()
+                    {
+                        for (var j=0;j<d[i].movies.length;j++)
+                        {
+                            for(var y = 0; y<c.length; y++)
+                            { //  console.log(name,c[y].name);
+                            //     console.log((c[y].name,name) ? c[y].name == name.trim() : 0);
+                                if(d[i].movies[j].id == c[y].id && c[y].name == name.trim())
+                                {
+                                    var mn  = c[y].name;
+                                    console.log(mn);
+                                    
+                                    for(let b = 0;b<d[i].movies[j].shows.length;b++)
+                                    {
+                                        console.log(date ? d[i].movies[j].shows[b].datetime == date : 0);
+                                        if (d[i].movies[j].shows[b].datetime == date)
+                                        {
+                                            console.log(d[i].movies[j].shows[b].house);
+                                            localStorage.setItem("index",d[i].movies[j].shows[b].index);
+                                            return d[i].movies[j].shows[b].house;
+                                        }
+                                    }
+                                                         
+                                }
+                            }
+                        }
+                    }
+        
+                    document.querySelector("button").addEventListener("click", tat);
+                    document.getElementById("movie_ticket").append(" " + name);
+                    document.getElementById("date").append(" " + date);
+                    document.getElementById("cinema_ticket").append(" " + cinema);
+                    document.getElementById("house_ticket").append(" " + h());
+        
+                    function tat() {
+                        var frm = document.getElementById("screen-form");
+                        if (a.length != 0) {
+                            frm.action = "print.html";
+                            localStorage.setItem("Cinema", cinema);
+                            localStorage.setItem("a", a);
+                            localStorage.setItem("date", date);
+                            localStorage.setItem("movieName",name);
+                            localStorage.setItem("house", h());
+
+                        } else 
+                        {
+                            alert("Kindly select any seat!!");
+                            frm.action = "javascript:void(0)";
+                        }
+        
+                    }
+                    return;
+        
+                }
+        
+                let m = document.querySelectorAll(".seat");
+        
+                for (let i = 0; i < m.length; i++) {
+                    m[i].addEventListener("click", function() {
+                        chng(i)
+                    });
+                }
+                a = [];
+        
+                function chng(i)
+                {
+                    m[i].classList.add("ok");
+                    if (m[i].getAttribute("id") != "sel") 
+                    {
+                        a[a.length] = m[i].getAttribute("id");
+                    }
+                    document.getElementById("seat-booked").setAttribute("value", a);
+                    m[i].setAttribute("id", "sel");
+                }
+                   
+        
+            }
+        </script>
+    </body>
+</html>
